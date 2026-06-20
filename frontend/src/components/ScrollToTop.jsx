@@ -1,41 +1,31 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FiArrowUp } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    const toggle = () => setIsVisible(window.scrollY > 400);
+    window.addEventListener("scroll", toggle);
+    return () => window.removeEventListener("scroll", toggle);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <>
+    <AnimatePresence>
       {isVisible && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 bg-red-500 text-white w-12 h-12 rounded-full shadow-lg hover:bg-red-600 transition-all duration-300 flex items-center justify-center animate-bounce"
+        <motion.button
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.5 }}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-red-500 text-white rounded-full shadow-xl hover:bg-red-600 transition-colors flex items-center justify-center"
           aria-label="Scroll to top"
         >
-          <FiArrowUp className="w-6 h-6" />
-        </button>
+          <FiArrowUp size={20} />
+        </motion.button>
       )}
-    </>
+    </AnimatePresence>
   );
 }
