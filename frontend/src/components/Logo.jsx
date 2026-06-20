@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function Logo({
-  variant = "default", // 'default', 'light', 'gold', 'minimal'
+  variant = "default",
   size = "md",
   withText = true,
   withTagline = false,
@@ -9,61 +9,54 @@ export default function Logo({
   const sizes = {
     sm: {
       container: "w-9 h-9",
-      icon: "text-base",
-      text: "text-sm",
-      tagline: "text-[8px]",
+      icon: "text-sm",
+      text: "text-xs",
+      tagline: "text-[7px]",
+      subtext: "text-[8px]",
     },
     md: {
-      container: "w-11 h-11 sm:w-12 sm:h-12",
+      container: "w-10 h-10 sm:w-11 sm:h-11",
+      icon: "text-base sm:text-lg",
+      text: "text-sm sm:text-base",
+      tagline: "text-[8px] sm:text-[9px]",
+      subtext: "text-[9px] sm:text-[10px]",
+    },
+    lg: {
+      container: "w-12 h-12 sm:w-14 sm:h-14",
       icon: "text-lg sm:text-xl",
       text: "text-base sm:text-lg",
       tagline: "text-[9px] sm:text-[10px]",
-    },
-    lg: {
-      container: "w-14 h-14 sm:w-16 sm:h-16",
-      icon: "text-xl sm:text-2xl",
-      text: "text-lg sm:text-xl",
-      tagline: "text-[10px] sm:text-xs",
+      subtext: "text-[10px] sm:text-xs",
     },
     xl: {
-      container: "w-20 h-20 sm:w-24 sm:h-24",
-      icon: "text-3xl sm:text-4xl",
-      text: "text-2xl sm:text-3xl",
-      tagline: "text-xs sm:text-sm",
+      container: "w-16 h-16 sm:w-20 sm:h-20",
+      icon: "text-2xl sm:text-3xl",
+      text: "text-xl sm:text-2xl",
+      tagline: "text-[10px] sm:text-xs",
+      subtext: "text-xs sm:text-sm",
     },
   };
 
   const current = sizes[size] || sizes.md;
 
-  // Color variants
   const colors = {
     default: {
       bg: "from-gray-900 to-gray-800",
       text: "text-gray-900",
       subtext: "text-gray-500",
       accent: "text-yellow-500",
-      line: "border-gray-200",
     },
     light: {
-      bg: "from-white to-gray-100",
+      bg: "from-gray-800 to-gray-700",
       text: "text-white",
       subtext: "text-gray-300",
       accent: "text-yellow-400",
-      line: "border-white/20",
     },
     gold: {
       bg: "from-yellow-600 to-yellow-700",
       text: "text-gray-900",
       subtext: "text-gray-500",
-      accent: "text-yellow-500",
-      line: "border-yellow-200",
-    },
-    minimal: {
-      bg: "from-gray-900 to-gray-900",
-      text: "text-gray-900",
-      subtext: "text-gray-400",
       accent: "text-white",
-      line: "border-gray-700",
     },
   };
 
@@ -72,31 +65,30 @@ export default function Logo({
   return (
     <Link
       href="/"
-      className="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0"
+      className="flex items-center gap-2 sm:gap-2.5 group flex-shrink-0"
     >
-      {/* Monogram Logo Mark */}
+      {/* Monogram Box - MA */}
       <div
-        className={`${current.container} relative rounded-2xl flex items-center justify-center overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105`}
+        className={`${current.container} relative rounded-xl sm:rounded-2xl flex items-center justify-center overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105`}
       >
-        {/* Background Gradient */}
         <div className={`absolute inset-0 bg-gradient-to-br ${color.bg}`}></div>
 
-        {/* Architectural Grid Lines */}
-        <div className="absolute inset-0 opacity-10">
+        {/* Grid Lines */}
+        <div className="absolute inset-0 opacity-[0.06]">
           <div className="absolute top-1/2 left-0 right-0 h-px bg-white"></div>
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white"></div>
         </div>
 
-        {/* Roof/Building Silhouette */}
+        {/* Building Silhouette */}
         <svg
-          className="absolute inset-0 w-full h-full opacity-[0.08]"
+          className="absolute inset-0 w-full h-full opacity-[0.06]"
           viewBox="0 0 100 100"
         >
-          <polygon points="50,15 15,55 85,55" fill="white" />
-          <rect x="25" y="55" width="50" height="30" fill="white" />
+          <polygon points="50,18 15,55 85,55" fill="white" />
+          <rect x="28" y="55" width="44" height="30" fill="white" />
         </svg>
 
-        {/* MA Monogram */}
+        {/* MA Text */}
         <span
           className={`${current.icon} text-white font-bold relative z-10 tracking-tighter`}
           style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
@@ -104,13 +96,13 @@ export default function Logo({
           MA
         </span>
 
-        {/* Gold Accent Dot */}
+        {/* Gold Dot */}
         <div
-          className={`absolute bottom-1.5 right-1.5 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-400 rounded-full shadow-sm`}
+          className={`absolute bottom-1 right-1 sm:bottom-1.5 sm:right-1.5 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-400 rounded-full shadow-sm`}
         ></div>
       </div>
 
-      {/* Text */}
+      {/* Text - Manuella Architects */}
       {withText && (
         <div className="hidden sm:block">
           <div
@@ -120,13 +112,13 @@ export default function Logo({
             Manuella
           </div>
           <div
-            className={`text-[10px] sm:text-xs ${color.subtext} -mt-0.5 tracking-[0.2em] uppercase font-medium`}
+            className={`${current.subtext} ${color.subtext} -mt-0.5 tracking-[0.15em] uppercase font-semibold`}
           >
             Architects
           </div>
           {withTagline && (
             <div
-              className={`${current.tagline} ${color.subtext} mt-0.5 tracking-wider opacity-70`}
+              className={`${current.tagline} ${color.subtext} mt-0.5 tracking-wider opacity-60`}
             >
               Architecture • Interior • Planning
             </div>
