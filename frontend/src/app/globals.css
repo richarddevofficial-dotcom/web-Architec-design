@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-800 bg-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply text-gray-800 bg-white;
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-white px-6 py-3 rounded-lg font-semibold 
+           hover:bg-accent-dark transition-all duration-300 
+           transform hover:scale-105 focus:outline-none focus:ring-2 
+           focus:ring-accent focus:ring-opacity-50;
+  }
+
+  .btn-secondary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold 
+           hover:bg-secondary transition-all duration-300 
+           transform hover:scale-105 focus:outline-none focus:ring-2 
+           focus:ring-primary focus:ring-opacity-50;
+  }
+
+  .btn-outline {
+    @apply border-2 border-white text-white px-6 py-3 rounded-lg 
+           font-semibold hover:bg-white hover:text-primary 
+           transition-all duration-300 transform hover:scale-105;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-20;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden 
+           hover:shadow-2xl transition-all duration-300;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg 
+           focus:ring-2 focus:ring-accent focus:border-transparent 
+           transition-all duration-300 outline-none;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-purple-600;
+  }
+
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-primary via-secondary to-dark;
+  }
+}
