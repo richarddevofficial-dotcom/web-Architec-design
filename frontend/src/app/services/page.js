@@ -54,9 +54,9 @@ export default function ServicesPage() {
   const whyChooseUs = [
     {
       icon: <FiClock className="w-6 h-6" />,
-      title: "15+ Years Experience",
+      title: "2+ Years Experience",
       description:
-        "Decades of expertise in architectural design and project management.",
+        "2+ years of expertise in architectural design and project management.",
     },
     {
       icon: <FiShield className="w-6 h-6" />,

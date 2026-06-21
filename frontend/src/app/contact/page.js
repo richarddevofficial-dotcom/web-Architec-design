@@ -54,7 +54,7 @@ Sent from Emmanuella Designs Contact Form
     `.trim();
 
     // Open default email client
-    const mailtoLink = `mailto:info@emmanuelladesigns.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:info@manuellaarchitects.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
   };
 
@@ -111,7 +111,7 @@ Sent from Emmanuella Designs Website
     {
       icon: <FiMail size={24} />,
       title: "Email Us",
-      content: "info@emmanuelladesigns.com",
+      content: "info@manuellaarchitects.com",
       sub: "We reply within 24hrs",
       color: "from-red-500 to-red-600",
     },
@@ -270,7 +270,7 @@ Sent from Emmanuella Designs Website
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all text-sm"
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+211 9XX XXX XXX"
                       />
                     </div>
                   </div>
@@ -403,7 +403,7 @@ Sent from Emmanuella Designs Website
                 <h3 className="text-xl font-bold mb-6">Prefer to Call?</h3>
                 <div className="space-y-4">
                   <a
-                    href="tel:+15551234567"
+                    href="tel:+211928661250"
                     className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors group"
                   >
                     <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center">
@@ -411,7 +411,7 @@ Sent from Emmanuella Designs Website
                     </div>
                     <div>
                       <p className="text-sm text-gray-400">Call Us Directly</p>
-                      <p className="font-semibold">+1 (555) 123-4567</p>
+                      <p className="font-semibold">+211 928 661 250</p>
                     </div>
                     <FiArrowRight
                       size={20}
@@ -419,7 +419,7 @@ Sent from Emmanuella Designs Website
                     />
                   </a>
                   <a
-                    href="mailto:info@emmanuelladesigns.com"
+                    href="mailto:info@manuellaarchitects.com"
                     className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors group"
                   >
                     <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center">
@@ -428,7 +428,7 @@ Sent from Emmanuella Designs Website
                     <div>
                       <p className="text-sm text-gray-400">Email Directly</p>
                       <p className="font-semibold text-sm">
-                        info@emmanuelladesigns.com
+                        info@manuellaarchitects.com
                       </p>
                     </div>
                     <FiArrowRight

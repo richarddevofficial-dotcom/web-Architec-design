@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function Home() {
   const stats = [
-    { value: "150+", label: "Projects" },
-    { value: "200+", label: "Clients" },
-    { value: "15+", label: "Years Exp." },
-    { value: "25+", label: "Awards" },
+    { value: "5+", label: "Projects" },
+    { value: "4+", label: "Clients" },
+    { value: "2+", label: "Years Exp." },
+    { value: "6+", label: "Awards" },
   ];
 
   const services = [
@@ -123,10 +123,12 @@ export default function Home() {
             <div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Welcome to{" "}
-                <span className="text-red-500">Emmanuella Designs</span>
+                <span className="text-red-500">
+                  Manuella Architectural Designs
+                </span>
               </h2>
               <p className="text-sm sm:text-base text-gray-600 mb-4 leading-relaxed">
-                With over 15 years of experience, we transform visions into
+                With over 2 years of experience, we transform visions into
                 reality through innovative architectural design.
               </p>
               <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 leading-relaxed">

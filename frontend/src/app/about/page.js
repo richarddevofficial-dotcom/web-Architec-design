@@ -87,12 +87,12 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Founded in 2008 by Emmanuella Johnson, Emmanuella Designs &
+                  Founded in 2024 by manuella, Manuella Architectural Designs &
                   Architects began as a small studio with a big vision: to
                   transform the way people experience architecture and design.
                 </p>
                 <p>
-                  Over the past 15 years, we have grown into a full-service
+                  Over the past 2 years, we have grown into a full-service
                   architectural firm with a diverse portfolio of residential,
                   commercial, and institutional projects across the country.
                 </p>
